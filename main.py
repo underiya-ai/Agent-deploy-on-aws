@@ -7,7 +7,10 @@ app = FastAPI(title="Search Agent End Point")
 
 class Search(BaseModel):
     query: str
-    
+
+@app.get("/")
+def home():
+    return {"message": "FastAPI is running on AWS"}
 
 
 @app.post("/agent_search")
